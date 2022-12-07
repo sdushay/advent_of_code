@@ -13,14 +13,13 @@ filepath = sys.argv[1]
 with open(filepath, 'r') as file:
     lines = file.readlines()
     total = 0
-    pdb.set_trace()
     for line in lines:
         (elf1, elf2) = line.replace('\n', '').split(',')
         elf1_start_stop = elf1.split('-')
         elf_set1 = get_set_from_range_string(elf1)
         elf_set2 = get_set_from_range_string(elf2)
-        contains = elf_set1 >= elf_set2 or elf_set2 >= elf_set1
-        total += int(contains)
+        overlaps = bool(len(elf_set1 & elf_set2))
+        total += int(overlaps)
 
 print(total)
 
