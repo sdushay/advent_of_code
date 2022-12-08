@@ -35,13 +35,14 @@ with open(filepath, 'r') as file:
                 pass
         row -= 1
 
-    print(stacks)
-
     # execute moves
     for line in lines[(start_row + 2):]:
         quant, source, dest = re.findall(r"(\d+)", line)
+        temp = []
         for x in range(int(quant)):
-            stacks[int(dest) - 1].append(stacks[int(source) - 1].pop())
+            temp.append(stacks[int(source) - 1].pop())
+        while len(temp):
+            stacks[int(dest) - 1].append(temp.pop())
 
 # get top off each stack
 res = ''
