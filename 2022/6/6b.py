@@ -11,12 +11,12 @@ with open(filepath, 'r') as file:
         window = []
         for i, char in enumerate(list(line.replace('\n', ''))):
             window.append(char)
-            if len(window) >= 4:
+            if len(window) >= 14:
                 # check window for dupes
                 # if no dupes, print res
                 # break
                 # otherwise, pop(0)
-                if len(set(window)) == 4:
+                if len(set(window)) == 14:
                     print(i + 1)
                     break
                 else:
