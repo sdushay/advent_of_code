@@ -1,0 +1,5 @@
+seeds: 78 3 46 11
+
+seed-to-location map:
+60 56 37
+56 93 4

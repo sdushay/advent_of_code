@@ -1,0 +1,7 @@
+seeds: 50 150
+
+seed-to-humidity map:
+50 200 2
+
+humidity-to-location map:
+56 40 204
